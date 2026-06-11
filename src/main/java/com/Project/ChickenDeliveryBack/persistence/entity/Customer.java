@@ -28,6 +28,8 @@ public class Customer {
 
     public Customer() {}
 
+    //Getters and Setters
+
     public Integer getId() { return id; }
 
     public void setId(Integer id) { this.id = id; }

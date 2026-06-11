@@ -28,6 +28,8 @@ public class Product {
 
     public Product() {}
 
+    //Getters and Setters
+
     public Integer getId() { return id; }
 
     public void setId(Integer id) { this.id = id; }
@@ -51,5 +53,5 @@ public class Product {
     public Boolean getEstado() { return estado; }
 
     public void setEstado(Boolean estado) { this.estado = estado; }
-    
+
 }
