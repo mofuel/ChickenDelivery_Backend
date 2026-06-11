@@ -69,5 +69,5 @@ public class Invoice {
     public Sale getVenta() { return venta; }
 
     public void setVenta(Sale venta) { this.venta = venta; }
-    
+
 }
