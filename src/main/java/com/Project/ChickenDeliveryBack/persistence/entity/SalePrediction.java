@@ -19,11 +19,14 @@ public class SalePrediction {
     @Column(name = "fecha_objetivo", nullable = false)
     private LocalDate fechaObjetivo;
 
-    @Column(name = "monto_estimado", nullable = false, precision = 10, scale = 2)
-    private Double montoEstimado;
+    @Column(name = "delivery_estimado", nullable = false)
+    private Integer deliveryEstimado;
 
-    @Column(name = "cantidad_productos_estimada", nullable = false)
-    private Integer cantidadProductosEstimada;
+    @Column(name = "recojo_estimado", nullable = false)
+    private Integer recojoEstimado;
+
+    @Column(name = "total_estimado", nullable = false)
+    private Integer totalEstimado;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario", nullable = false)
@@ -45,16 +48,21 @@ public class SalePrediction {
 
     public void setFechaObjetivo(LocalDate fechaObjetivo) { this.fechaObjetivo = fechaObjetivo; }
 
-    public Double getMontoEstimado() { return montoEstimado; }
+    public Integer getDeliveryEstimado() { return deliveryEstimado; }
 
-    public void setMontoEstimado(Double montoEstimado) { this.montoEstimado = montoEstimado; }
+    public void setDeliveryEstimado(Integer deliveryEstimado) { this.deliveryEstimado = deliveryEstimado; }
 
-    public Integer getCantidadProductosEstimada() { return cantidadProductosEstimada; }
+    public Integer getRecojoEstimado() { return recojoEstimado; }
 
-    public void setCantidadProductosEstimada(Integer cantidadProductosEstimada) { this.cantidadProductosEstimada = cantidadProductosEstimada; }
+    public void setRecojoEstimado(Integer recojoEstimado) { this.recojoEstimado = recojoEstimado; }
+
+    public Integer getTotalEstimado() { return totalEstimado; }
+
+    public void setTotalEstimado(Integer totalEstimado) { this.totalEstimado = totalEstimado; }
 
     public User getUsuario() { return usuario; }
-
-    public void setUsuario(User usuario) { this.usuario = usuario; }
     
+    public void setUsuario(User usuario) { this.usuario = usuario; }
+
+
 }

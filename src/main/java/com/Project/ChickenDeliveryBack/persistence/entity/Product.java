@@ -21,10 +21,11 @@ public class Product {
     private Double precio;
 
     @Column(nullable = false)
-    private Integer stock;
-
-    @Column(nullable = false)
     private Boolean estado;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_categoria", nullable = false)
+    private ProductCategory categoria;
 
     public Product() {}
 
@@ -46,12 +47,13 @@ public class Product {
 
     public void setPrecio(Double precio) { this.precio = precio; }
 
-    public Integer getStock() { return stock; }
-
-    public void setStock(Integer stock) { this.stock = stock; }
-
     public Boolean getEstado() { return estado; }
 
     public void setEstado(Boolean estado) { this.estado = estado; }
+
+    public ProductCategory getCategoria() { return categoria; }
+
+    public void setCategoria(ProductCategory categoria) { this.categoria = categoria; }
+
 
 }

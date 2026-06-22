@@ -1,6 +1,8 @@
 package com.Project.ChickenDeliveryBack.persistence.entity;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name = "cliente")
@@ -22,6 +24,9 @@ public class Customer {
 
     @Column(length = 120)
     private String direccion;
+
+    @Column(name = "fecha_registro", nullable = false)
+    private LocalDateTime fechaRegistro;
 
     @Column(nullable = false)
     private Boolean estado;
@@ -49,6 +54,10 @@ public class Customer {
     public String getDireccion() { return direccion; }
 
     public void setDireccion(String direccion) { this.direccion = direccion; }
+
+    public LocalDateTime getFechaRegistro() { return fechaRegistro; }
+
+    public void setFechaRegistro(LocalDateTime fechaRegistro) { this.fechaRegistro = fechaRegistro; }
 
     public Boolean getEstado() { return estado; }
 

@@ -4,25 +4,19 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "factura")
-public class Invoice {
+@Table(name = "comprobante")
+public class Voucher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_factura")
+    @Column(name = "id_comprobante")
     private Integer id;
 
-    @Column(name = "numero_factura", nullable = false, unique = true, length = 20)
-    private String numeroFactura;
+    @Column(name = "tipo_comprobante", nullable = false, length = 20)
+    private String tipoComprobante;
 
-    @Column(name = "ruc_cliente", nullable = false, length = 11)
-    private String rucCliente;
-
-    @Column(name = "razon_social", nullable = false, length = 100)
-    private String razonSocial;
-
-    @Column(name = "direccion_fiscal", nullable = false, length = 150)
-    private String direccionFiscal;
+    @Column(name = "numero_comprobante", nullable = false, unique = true, length = 20)
+    private String numeroComprobante;
 
     @Column(name = "fecha_emision", nullable = false)
     private LocalDateTime fechaEmision;
@@ -30,11 +24,20 @@ public class Invoice {
     @Column(nullable = false, precision = 10, scale = 2)
     private Double total;
 
+    @Column(name = "ruc_cliente", length = 11)
+    private String rucCliente;
+
+    @Column(name = "razon_social", length = 100)
+    private String razonSocial;
+
+    @Column(name = "direccion_fiscal", length = 150)
+    private String direccionFiscal;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_venta", nullable = false, unique = true)
     private Sale venta;
 
-    public Invoice() {}
+    public Voucher() {}
 
     //Getters and Setters
 
@@ -42,9 +45,21 @@ public class Invoice {
 
     public void setId(Integer id) { this.id = id; }
 
-    public String getNumeroFactura() { return numeroFactura; }
+    public String getTipoComprobante() { return tipoComprobante; }
 
-    public void setNumeroFactura(String numeroFactura) { this.numeroFactura = numeroFactura; }
+    public void setTipoComprobante(String tipoComprobante) { this.tipoComprobante = tipoComprobante; }
+
+    public String getNumeroComprobante() { return numeroComprobante; }
+
+    public void setNumeroComprobante(String numeroComprobante) { this.numeroComprobante = numeroComprobante; }
+
+    public LocalDateTime getFechaEmision() { return fechaEmision; }
+
+    public void setFechaEmision(LocalDateTime fechaEmision) { this.fechaEmision = fechaEmision; }
+
+    public Double getTotal() { return total; }
+
+    public void setTotal(Double total) { this.total = total; }
 
     public String getRucCliente() { return rucCliente; }
 
@@ -58,16 +73,7 @@ public class Invoice {
 
     public void setDireccionFiscal(String direccionFiscal) { this.direccionFiscal = direccionFiscal; }
 
-    public LocalDateTime getFechaEmision() { return fechaEmision; }
-
-    public void setFechaEmision(LocalDateTime fechaEmision) { this.fechaEmision = fechaEmision; }
-
-    public Double getTotal() { return total; }
-
-    public void setTotal(Double total) { this.total = total; }
-
     public Sale getVenta() { return venta; }
 
     public void setVenta(Sale venta) { this.venta = venta; }
-
 }
