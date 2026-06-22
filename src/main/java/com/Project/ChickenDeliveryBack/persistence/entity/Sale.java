@@ -97,7 +97,7 @@ public class Sale {
     public void setDelivery(Delivery delivery) { this.delivery = delivery; }
 
     public Voucher getComprobante() { return comprobante; }
-    
+
     public void setComprobante(Voucher comprobante) { this.comprobante = comprobante; }
 
 }
