@@ -66,7 +66,7 @@ public class Promotion {
     public void setFechaFin(LocalDate fechaFin) { this.fechaFin = fechaFin; }
 
     public Boolean getEstado() { return estado; }
-    
+
     public void setEstado(Boolean estado) { this.estado = estado; }
 
 }
