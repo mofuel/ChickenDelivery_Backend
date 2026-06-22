@@ -53,6 +53,6 @@ public class AICall {
     public void setDuracionSegundos(Integer duracionSegundos) { this.duracionSegundos = duracionSegundos; }
 
     public Sale getVenta() { return venta; }
-    
+
     public void setVenta(Sale venta) { this.venta = venta; }
 }
