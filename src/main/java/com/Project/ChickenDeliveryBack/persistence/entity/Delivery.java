@@ -53,6 +53,6 @@ public class Delivery {
     public void setFechaSalida(LocalDateTime fechaSalida) { this.fechaSalida = fechaSalida; }
 
     public LocalDateTime getFechaEntrega() { return fechaEntrega; }
-    
+
     public void setFechaEntrega(LocalDateTime fechaEntrega) { this.fechaEntrega = fechaEntrega; }
 }
