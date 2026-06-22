@@ -18,8 +18,11 @@ public class Promotion {
     @Column(nullable = false, length = 80)
     private String nombre;
 
-    @Column(nullable = false, precision = 10, scale = 2)
-    private Double descuento;
+    @Column(length = 150)
+    private String descripcion;
+
+    @Column(name = "precio_combo", nullable = false, precision = 10, scale = 2)
+    private Double precioCombo;
 
     @Column(name = "fecha_inicio", nullable = false)
     private LocalDate fechaInicio;
@@ -46,9 +49,13 @@ public class Promotion {
 
     public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public Double getDescuento() { return descuento; }
+    public String getDescripcion() { return descripcion; }
 
-    public void setDescuento(Double descuento) { this.descuento = descuento; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+
+    public Double getPrecioCombo() { return precioCombo; }
+
+    public void setPrecioCombo(Double precioCombo) { this.precioCombo = precioCombo; }
 
     public LocalDate getFechaInicio() { return fechaInicio; }
 
@@ -59,7 +66,7 @@ public class Promotion {
     public void setFechaFin(LocalDate fechaFin) { this.fechaFin = fechaFin; }
 
     public Boolean getEstado() { return estado; }
-
+    
     public void setEstado(Boolean estado) { this.estado = estado; }
 
 }
