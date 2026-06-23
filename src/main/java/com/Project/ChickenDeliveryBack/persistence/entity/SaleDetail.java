@@ -1,6 +1,7 @@
 package com.Project.ChickenDeliveryBack.persistence.entity;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "detalle_venta")
@@ -23,10 +24,10 @@ public class SaleDetail {
     private Integer cantidad;
 
     @Column(name = "precio_unitario", nullable = false, precision = 10, scale = 2)
-    private Double precioUnitario;
+    private BigDecimal precioUnitario;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private Double subtotal;
+    private BigDecimal subtotal;
 
     public SaleDetail() {}
 
@@ -48,12 +49,12 @@ public class SaleDetail {
 
     public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
 
-    public Double getPrecioUnitario() { return precioUnitario; }
+    public BigDecimal getPrecioUnitario() { return precioUnitario; }
 
-    public void setPrecioUnitario(Double precioUnitario) { this.precioUnitario = precioUnitario; }
+    public void setPrecioUnitario(BigDecimal precioUnitario) { this.precioUnitario = precioUnitario; }
 
-    public Double getSubtotal() { return subtotal; }
+    public BigDecimal getSubtotal() { return subtotal; }
 
-    public void setSubtotal(Double subtotal) { this.subtotal = subtotal; }
+    public void setSubtotal(BigDecimal subtotal) { this.subtotal = subtotal; }
 
 }

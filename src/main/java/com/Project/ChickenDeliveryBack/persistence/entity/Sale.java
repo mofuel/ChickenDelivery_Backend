@@ -1,6 +1,7 @@
 package com.Project.ChickenDeliveryBack.persistence.entity;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Sale {
     private String canalVenta;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private Double total;
+    private BigDecimal total;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario", nullable = false)
@@ -72,9 +73,9 @@ public class Sale {
 
     public void setCanalVenta(String canalVenta) { this.canalVenta = canalVenta; }
 
-    public Double getTotal() { return total; }
+    public BigDecimal getTotal() { return total; }
 
-    public void setTotal(Double total) { this.total = total; }
+    public void setTotal(BigDecimal total) { this.total = total; }
 
     public User getUsuario() { return usuario; }
 

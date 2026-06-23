@@ -1,5 +1,6 @@
 package com.Project.ChickenDeliveryBack.domain.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class VoucherDTO {
@@ -7,7 +8,7 @@ public class VoucherDTO {
     private String tipoComprobante;
     private String numeroComprobante;
     private LocalDateTime fechaEmision;
-    private Double total;
+    private BigDecimal total;
     private String rucCliente;
     private String razonSocial;
     private String direccionFiscal;
@@ -23,8 +24,8 @@ public class VoucherDTO {
     public void setNumeroComprobante(String numeroComprobante) { this.numeroComprobante = numeroComprobante; }
     public LocalDateTime getFechaEmision() { return fechaEmision; }
     public void setFechaEmision(LocalDateTime fechaEmision) { this.fechaEmision = fechaEmision; }
-    public Double getTotal() { return total; }
-    public void setTotal(Double total) { this.total = total; }
+    public BigDecimal getTotal() { return total; }
+    public void setTotal(BigDecimal total) { this.total = total; }
     public String getRucCliente() { return rucCliente; }
     public void setRucCliente(String rucCliente) { this.rucCliente = rucCliente; }
     public String getRazonSocial() { return razonSocial; }

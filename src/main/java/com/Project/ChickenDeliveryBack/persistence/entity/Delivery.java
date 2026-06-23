@@ -1,6 +1,7 @@
 package com.Project.ChickenDeliveryBack.persistence.entity;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,7 +21,7 @@ public class Delivery {
     private String estadoDelivery;
 
     @Column(name = "costo_delivery", nullable = false, precision = 10, scale = 2)
-    private Double costoDelivery;
+    private BigDecimal costoDelivery;
 
     @Column(name = "fecha_salida")
     private LocalDateTime fechaSalida;
@@ -44,9 +45,9 @@ public class Delivery {
 
     public void setEstadoDelivery(String estadoDelivery) { this.estadoDelivery = estadoDelivery; }
 
-    public Double getCostoDelivery() { return costoDelivery; }
+    public BigDecimal getCostoDelivery() { return costoDelivery; }
 
-    public void setCostoDelivery(Double costoDelivery) { this.costoDelivery = costoDelivery; }
+    public void setCostoDelivery(BigDecimal costoDelivery) { this.costoDelivery = costoDelivery; }
 
     public LocalDateTime getFechaSalida() { return fechaSalida; }
 
