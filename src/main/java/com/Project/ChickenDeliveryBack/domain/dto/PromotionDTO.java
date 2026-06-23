@@ -1,13 +1,14 @@
 package com.Project.ChickenDeliveryBack.domain.dto;
 
 import java.time.LocalDate;
+import java.math.BigDecimal;
 
 public class PromotionDTO {
     private Integer id;
     private String codigo;
     private String nombre;
     private String descripcion;
-    private Double precioCombo;
+    private BigDecimal precioCombo;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private Boolean estado;
@@ -22,8 +23,8 @@ public class PromotionDTO {
     public void setNombre(String nombre) { this.nombre = nombre; }
     public String getDescripcion() { return descripcion; }
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-    public Double getPrecioCombo() { return precioCombo; }
-    public void setPrecioCombo(Double precioCombo) { this.precioCombo = precioCombo; }
+    public BigDecimal getPrecioCombo() { return precioCombo; }
+    public void setPrecioCombo(BigDecimal precioCombo) { this.precioCombo = precioCombo; }
     public LocalDate getFechaInicio() { return fechaInicio; }
     public void setFechaInicio(LocalDate fechaInicio) { this.fechaInicio = fechaInicio; }
     public LocalDate getFechaFin() { return fechaFin; }

@@ -1,13 +1,15 @@
 package com.Project.ChickenDeliveryBack.domain.dto;
 
+import java.math.BigDecimal;
+
 public class SaleDetailDTO {
     private Integer id;
     private Integer idVenta;
     private Integer idProducto;
     private String nombreProducto;
     private Integer cantidad;
-    private Double precioUnitario;
-    private Double subtotal;
+    private BigDecimal precioUnitario;
+    private BigDecimal subtotal;
 
     public SaleDetailDTO() {}
 
@@ -21,8 +23,8 @@ public class SaleDetailDTO {
     public void setNombreProducto(String nombreProducto) { this.nombreProducto = nombreProducto; }
     public Integer getCantidad() { return cantidad; }
     public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
-    public Double getPrecioUnitario() { return precioUnitario; }
-    public void setPrecioUnitario(Double precioUnitario) { this.precioUnitario = precioUnitario; }
-    public Double getSubtotal() { return subtotal; }
-    public void setSubtotal(Double subtotal) { this.subtotal = subtotal; }
+    public BigDecimal getPrecioUnitario() { return precioUnitario; }
+    public void setPrecioUnitario(BigDecimal precioUnitario) { this.precioUnitario = precioUnitario; }
+    public BigDecimal getSubtotal() { return subtotal; }
+    public void setSubtotal(BigDecimal subtotal) { this.subtotal = subtotal; }
 }

@@ -1,6 +1,7 @@
 package com.Project.ChickenDeliveryBack.persistence.entity;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "producto")
@@ -18,7 +19,7 @@ public class Product {
     private String descripcion;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private Double precio;
+    private BigDecimal precio;
 
     @Column(nullable = false)
     private Boolean estado;
@@ -43,9 +44,9 @@ public class Product {
 
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
-    public Double getPrecio() { return precio; }
+    public BigDecimal getPrecio() { return precio; }
 
-    public void setPrecio(Double precio) { this.precio = precio; }
+    public void setPrecio(BigDecimal precio) { this.precio = precio; }
 
     public Boolean getEstado() { return estado; }
 

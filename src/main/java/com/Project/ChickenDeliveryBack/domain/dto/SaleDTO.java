@@ -1,5 +1,6 @@
 package com.Project.ChickenDeliveryBack.domain.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class SaleDTO {
     private String tipoEntrega;
     private String metodoPago;
     private String canalVenta;
-    private Double total;
+    private BigDecimal total;
     private Integer idUsuario;
     private String nombreUsuario;
     private Integer idCliente;
@@ -31,8 +32,8 @@ public class SaleDTO {
     public void setMetodoPago(String metodoPago) { this.metodoPago = metodoPago; }
     public String getCanalVenta() { return canalVenta; }
     public void setCanalVenta(String canalVenta) { this.canalVenta = canalVenta; }
-    public Double getTotal() { return total; }
-    public void setTotal(Double total) { this.total = total; }
+    public BigDecimal getTotal() { return total; }
+    public void setTotal(BigDecimal total) { this.total = total; }
     public Integer getIdUsuario() { return idUsuario; }
     public void setIdUsuario(Integer idUsuario) { this.idUsuario = idUsuario; }
     public String getNombreUsuario() { return nombreUsuario; }
