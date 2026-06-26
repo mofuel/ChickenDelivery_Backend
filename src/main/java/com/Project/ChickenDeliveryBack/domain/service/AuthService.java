@@ -62,7 +62,7 @@ public class AuthService {
         user.setNombre(usuario);
         user.setUsuario(usuario);
         user.setContrasenia(passwordEncoder.encode(request.getContrasenia()));
-        user.setRol("VENDEDOR");
+        user.setRol("Colaborador");
         user.setEstado(true);
 
         User saved = userCrudRepository.save(user);
