@@ -2,7 +2,10 @@ package com.Project.ChickenDeliveryBack.persistence.repositoryimpl;
 
 import com.Project.ChickenDeliveryBack.domain.dto.ProductDTO;
 import com.Project.ChickenDeliveryBack.domain.repository.ProductRepository;
+import com.Project.ChickenDeliveryBack.persistence.crud.ProductCategoryCrudRepository;
 import com.Project.ChickenDeliveryBack.persistence.crud.ProductCrudRepository;
+import com.Project.ChickenDeliveryBack.persistence.entity.Product;
+import com.Project.ChickenDeliveryBack.persistence.entity.ProductCategory;
 import com.Project.ChickenDeliveryBack.persistence.mapper.ProductMapper;
 import org.springframework.stereotype.Repository;
 
@@ -15,15 +18,23 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     private final ProductCrudRepository crudRepository;
     private final ProductMapper mapper;
+    private final ProductCategoryCrudRepository productCategoryCrudRepository;
 
-    public ProductRepositoryImpl(ProductCrudRepository crudRepository, ProductMapper mapper) {
+    public ProductRepositoryImpl(ProductCrudRepository crudRepository, ProductMapper mapper, ProductCategoryCrudRepository productCategoryCrudRepository) {
         this.crudRepository = crudRepository;
         this.mapper = mapper;
+        this.productCategoryCrudRepository = productCategoryCrudRepository;
     }
 
     @Override
     public ProductDTO save(ProductDTO productDTO) {
-        return mapper.toDto(crudRepository.save(mapper.toEntity(productDTO)));
+        Product entity = mapper.toEntity(productDTO);
+        if (productDTO.getIdCategoria() != null) {
+            ProductCategory categoria = productCategoryCrudRepository.findById(productDTO.getIdCategoria())
+                    .orElseThrow(() -> new IllegalArgumentException("Categoría no encontrada"));
+            entity.setCategoria(categoria);
+        }
+        return mapper.toDto(crudRepository.save(entity));
     }
 
     @Override
